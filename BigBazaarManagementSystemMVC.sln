@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBazaarManagementSystemMVC", "BigBazaarManagementSystemMVC\BigBazaarManagementSystemMVC.csproj", "{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC4AECC3-8CC3-4E73-8766-5D1DEBB9B179}
+	EndGlobalSection
+EndGlobal
