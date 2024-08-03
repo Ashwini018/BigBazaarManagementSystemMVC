@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBazaarManagementSystemMVC", "BigBazaarManagementSystemMVC\BigBazaarManagementSystemMVC.csproj", "{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigBazaarManagementSystemMVC", "BigBazaarManagementSystemMVC\BigBazaarManagementSystemMVC.csproj", "{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBazaarBL", "BigBazaarBL\BigBazaarBL.csproj", "{20C24564-888E-43F1-B29B-64963F107CFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigBazaarDL", "BigBazaarDL\BigBazaarDL.csproj", "{089DFAEF-848A-4426-8B9F-097503C23071}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{A540D0A8-8144-4D5F-BABD-12F8B0332387}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EAE75D0-1F3C-42A1-95B9-011F1C461DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C24564-888E-43F1-B29B-64963F107CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C24564-888E-43F1-B29B-64963F107CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C24564-888E-43F1-B29B-64963F107CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C24564-888E-43F1-B29B-64963F107CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{089DFAEF-848A-4426-8B9F-097503C23071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{089DFAEF-848A-4426-8B9F-097503C23071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{089DFAEF-848A-4426-8B9F-097503C23071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{089DFAEF-848A-4426-8B9F-097503C23071}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A540D0A8-8144-4D5F-BABD-12F8B0332387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A540D0A8-8144-4D5F-BABD-12F8B0332387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A540D0A8-8144-4D5F-BABD-12F8B0332387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A540D0A8-8144-4D5F-BABD-12F8B0332387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

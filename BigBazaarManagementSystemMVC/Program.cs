@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using BigBazaarDL;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<BigBazaarContext>(opts => opts.UseSqlServer(builder.Configuration["connectionString:BigBazaar"]));
 
 var app = builder.Build();
 
