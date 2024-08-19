@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using BigBazaarDL;
-
+using BigBazaarBL;
+using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BigBazaarContext>(opts => opts.UseSqlServer(builder.Configuration["connectionString:BigBazaar"]));
+
+builder.Services.AddCors();
+builder.Services.AddTransient<IBigBazaarBL, BigBazaarB>();
+builder.Services.AddTransient<IBigBazaarDL, BigBazaarD>();
+
 
 var app = builder.Build();
 
