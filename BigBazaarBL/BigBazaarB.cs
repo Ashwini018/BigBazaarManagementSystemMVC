@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BigBazaarBL
 {
-    internal class BigBazaarBL:IBigBazaarBL
+    public class BigBazaarB:IBigBazaarBL
     {
     }
 }
