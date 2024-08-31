@@ -1,4 +1,4 @@
-﻿using BigBazaarManagementSystemMVC.Models;
+﻿using Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +9,34 @@ namespace BigBazaarDL
 {
     public class BigBazaarD : IBigBazaarDL
     {
-        public Task<bool> AddCategory(Category cat)
+        private readonly BigBazaarContext context;
+
+        public BigBazaarD(BigBazaarContext context)
         {
-            throw new NotImplementedException();
+            this.context = context;
+        }
+        public async Task<bool> AddCategory(Category category)
+        {
+            try
+            {
+                int row = 0;
+
+                context.Categories.Add(category);
+
+                row = await context.SaveChangesAsync();
+                if (row > 0)
+                {
+                    return true;
+                }
+                else 
+                { 
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new NotImplementedException();
+            }
         }
 
         public Task<bool> AddProduct(Product prod)

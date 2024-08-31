@@ -1,0 +1,61 @@
+﻿@model BigBazaarManagementSystemMVC.Models.Category;
+
+@{
+    ViewData["Title"] = "AddCategory";
+}
+
+<h1>AddCategory</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddCategory" id="formAction">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CatName" class="control-label"></label>
+                <input asp-for="CatName" class="form-control" id="name" />
+                <span asp-validation-for="CatName" class="text-danger" id="categoryName"></span>
+            </div>
+            <div class="form-group">
+                <input type="button" value="Create" class="btn btn-primary" id="button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#button").click(function () {
+                var name = $("#name").val();
+                if (name.length == 0) {
+                    document.getElementById("categoryName").innerHTML = "Please enter a category";
+                    //var st = {
+                    //    Name: name
+                    //};
+                    return false;
+                }
+                var data = $("#formAction").serialize();
+
+                $.ajax({
+                    url: "/Admin/AddingCategory",
+                    data: data,
+                    type: "POST",
+                    success: function (data) {
+                        alert(data);
+
+                    },
+                    error: function (data) {
+                        alert(data);
+                    },
+                });
+                alert("Hello " + name);
+            });
+        });
+    </script>
+}
