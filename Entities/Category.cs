@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BigBazaarManagementSystemMVC.Models
+namespace Entities
 {
+
     public partial class Category
     {
         public Category()

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BigBazaarManagementSystemMVC.Models
+namespace Entities
 {
+
+
+
     public partial class Product
     {
         public int ProdId { get; set; }
