@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BigBazaarManagementSystemMVC.Models
 {
-    public partial class Product
+    public partial class ProductModel
     {
         public int ProdId { get; set; }
         public string? ProdName { get; set; }
@@ -12,6 +12,6 @@ namespace BigBazaarManagementSystemMVC.Models
         public int? ProdCount { get; set; }
         public int? CatId { get; set; }
 
-        public virtual Category? Cat { get; set; }
+        public virtual CategoryModel? Cat { get; set; }
     }
 }

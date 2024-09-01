@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient.Server;
 using BigBazaarBL;
 using Entities;
+using BigBazaarManagementSystemMVC.Models;
 
 
 namespace BigBazaarManagementSystemMVC.Controllers
@@ -29,8 +30,7 @@ namespace BigBazaarManagementSystemMVC.Controllers
         }
 
         [HttpPost]
-    
-        public async Task<IActionResult> AddCategory(Category cat) {
+        public async Task<JsonResult> AddingCategory(CategoryModel cat) {
 
             
                 try
@@ -51,7 +51,7 @@ namespace BigBazaarManagementSystemMVC.Controllers
 
                 }catch(Exception e)
                 {
-                    return Json("Something went wrong!!");
+                    return Json("Something went wrong!!",e);
                 }
             
             

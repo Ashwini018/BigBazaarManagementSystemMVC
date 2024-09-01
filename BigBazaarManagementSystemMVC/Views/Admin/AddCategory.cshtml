@@ -1,21 +1,19 @@
-﻿@model BigBazaarManagementSystemMVC.Models.Category;
+﻿@model BigBazaarManagementSystemMVC.Models.CategoryModel;
 
-@{
-    ViewData["Title"] = "AddCategory";
-}
 
-<h1>AddCategory</h1>
 
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddCategory" id="formAction">
+        <form asp-action="AddCategory" id="formAction" class="border border-5 rounded p-4">
+            <h2 class="text-center mb-4 border-bottom">Add New Category</h2>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="CatName" class="control-label"></label>
                 <input asp-for="CatName" class="form-control" id="name" />
                 <span asp-validation-for="CatName" class="text-danger" id="categoryName"></span>
             </div>
+            <div>  <p> </p></div>
             <div class="form-group">
                 <input type="button" value="Create" class="btn btn-primary" id="button" />
             </div>
@@ -54,7 +52,7 @@
                         alert(data);
                     },
                 });
-                alert("Hello " + name);
+               
             });
         });
     </script>

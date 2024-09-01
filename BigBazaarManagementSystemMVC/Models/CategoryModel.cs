@@ -3,16 +3,16 @@ using System.Collections.Generic;
 
 namespace BigBazaarManagementSystemMVC.Models
 {
-    public partial class Category
+    public partial class CategoryModel
     {
-        public Category()
+        public CategoryModel()
         {
-            Products = new HashSet<Product>();
+            Products = new HashSet<ProductModel>();
         }
 
         public int CatId { get; set; }
         public string? CatName { get; set; }
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<ProductModel> Products { get; set; }
     }
 }
