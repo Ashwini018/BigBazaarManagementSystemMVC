@@ -4,6 +4,10 @@ using Microsoft.Data.SqlClient.Server;
 using BigBazaarBL;
 using Entities;
 using BigBazaarManagementSystemMVC.Models;
+using System.Reflection.Metadata.Ecma335;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 
 namespace BigBazaarManagementSystemMVC.Controllers
@@ -11,6 +15,8 @@ namespace BigBazaarManagementSystemMVC.Controllers
     public class AdminController : Controller
     {
         private readonly IBigBazaarBL entity;
+        private readonly ICompositeViewEngine _viewEngine;
+        
 
         public AdminController(IBigBazaarBL entity)
         {
@@ -24,19 +30,35 @@ namespace BigBazaarManagementSystemMVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult AddCategory()
+        public async Task<IActionResult> AddCategory()
         {
-            return View();
+
+            try
+            {
+                List<Category> list = await entity.GetCategories();
+
+                List<CategoryModel> modelList = list.Select(item => new CategoryModel { CatId = item.CatId, CatName = item.CatName }).ToList();
+
+                ViewBag.ModelList = modelList;
+
+                return View();
+            }
+            catch (Exception e)
+            {
+                return Json("Something wentwrong", e);
+            }
         }
 
         [HttpPost]
         public async Task<JsonResult> AddingCategory(CategoryModel cat) {
 
-            
+            if (ModelState.IsValid)
+            {
+
                 try
                 {
                     Category category = new Category();
-                    category.CatName=cat.CatName;
+                    category.CatName = cat.CatName;
 
                     bool val = await entity.AddCategory(category);
 
@@ -49,12 +71,43 @@ namespace BigBazaarManagementSystemMVC.Controllers
                         return Json("Failed to Add a new category, Please Try Again Later!!");
                     }
 
-                }catch(Exception e)
-                {
-                    return Json("Something went wrong!!",e);
                 }
+                catch (Exception e)
+                {
+                    return Json("Something went wrong!!", e);
+                }
+            }
+            else
+            {
+                return Json("Something went wrong!!");
+            }
             
             
         }
+
+        [HttpGet]
+
+        public async Task<IActionResult> ViewCategory()
+        {
+            try
+            {
+                List<Category> list = await entity.GetCategories();
+
+                List<CategoryModel> modelList=list.Select(item=>new CategoryModel { CatId=item.CatId,CatName=item.CatName}).ToList();
+
+                ViewBag.ModelList = modelList;
+
+                return View();
+            }
+            catch(Exception e)
+            {
+                return Json("Something wentwrong",e);
+            }
+        }
+
+       
+
+
     }
 }
+

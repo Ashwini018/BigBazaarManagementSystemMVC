@@ -11,6 +11,6 @@ namespace BigBazaarBL
     {
         public Task<bool> AddCategory(Category cat);
 
-
+        public Task<List<Category>> GetCategories();
     }
 }

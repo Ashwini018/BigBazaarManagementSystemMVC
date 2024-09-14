@@ -21,15 +21,14 @@
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
             $("#button").click(function () {
+                loadCategories();
                 var name = $("#name").val();
                 if (name.length == 0) {
                     document.getElementById("categoryName").innerHTML = "Please enter a category";
@@ -55,5 +54,28 @@
                
             });
         });
+        function loadCategories() {
+            $.ajax({
+                url: "/Admin/ViewCategory", // Replace with your action URL
+                type: "GET",
+                success: function (response) {
+                    if (response.success) {
+                        $("#partialViewContainer").html(response.partialViewHtml); // Update the partial view container with the new HTML
+                    } else {
+                        alert(response.message); // Show error message
+                    }
+                },
+                error: function (xhr, status, error) {
+                    alert("An error occurred: " + error);
+                }
+            });
+        }
+                });
     </script>
 }
+
+<partial name="_viewCategory" />
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -43,5 +43,21 @@ namespace BigBazaarDL
         {
             throw new NotImplementedException();
         }
+
+        public async Task<List<Category>> GetCategories()
+        {
+            try
+            {
+                List<Category> list = new List<Category>();
+
+                list =  context.Categories.ToList();
+
+                return list;
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Something went wrong!!", e);
+            }
+        }
     }
 }

@@ -12,5 +12,7 @@ namespace BigBazaarDL
         public Task<bool> AddCategory(Category cat);
 
         public Task<bool> AddProduct(Product prod);
+
+        public Task<List<Category>> GetCategories();
     }
 }

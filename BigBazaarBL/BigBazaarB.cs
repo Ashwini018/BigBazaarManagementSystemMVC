@@ -29,5 +29,18 @@ namespace BigBazaarBL
                 throw new Exception("Somethis is wrong!!",ex);
             }
         }
+
+        public async Task<List<Category>> GetCategories()
+        {
+            try
+            {
+                return await context.GetCategories();
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Something went wrong!!",e);
+            }
+            
+        }
     }
 }

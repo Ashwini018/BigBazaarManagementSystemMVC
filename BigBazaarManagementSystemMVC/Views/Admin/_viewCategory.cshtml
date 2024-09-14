@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BigBazaarManagementSystemMVC.Models.CategoryModel>
+
+
+<h1>DisplayCategory</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                CategoryName
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.modelList)
+        {
+            <tr>
+                <td>
+                    @item.CatId
+                </td>
+                <td>
+                    @item.CatName
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { @id = item.CatId }) |
+
+                    @Html.ActionLink("Delete", "Delete", new { @id = item.CatId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
